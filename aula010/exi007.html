@@ -3,23 +3,44 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Somando Numeros</title>
+    <title>Somando Números</title>
+    <style>
+      body {
+        font-family: Arial, Helvetica, sans-serif;
+        font-size: 23px;
+      }
+
+      input {
+        width: 100px;
+        height: 50px;
+        border-radius: 6px;
+        border: 2px solid black;
+      }
+
+      div {
+        margin-top: 20px;
+      }
+    </style>
   </head>
   <body>
     <h1>Somando Valores</h1>
-    <input type="number" name="num1" id="num1" /> +
-    <input type="number" name="num2" id="num2" />
+    <input type="number" name="txt1" id="txt1" />
+    <input type="number" name="txt2" id="txt2" />
     <input type="button" value="soma" onclick="soma()" />
     <div id="res">Resposta</div>
 
     <script>
       function soma() {
-        var n1 = parseFloat(document.getElementById("num1").value);
-        var n2 = parseFloat(document.getElementById("num2").value);
-        var res = document.getElementById("res");
+        var t1 = window.document.getElementById("txt1");
+        var t2 = window.document.getElementById("txt2");
+        var res = window.document.getElementById("res");
+
+        var n1 = parseInt(t1.value);
+        var n2 = parseInt(t2.value);
 
         var s = n1 + n2;
-        res.innerHTML = "A soma é: " + s;
+
+        res.innerHTML = `A soma dos numeros ${n1} e ${n2} é igual: <strong>${s}</strong>`;
       }
     </script>
   </body>
